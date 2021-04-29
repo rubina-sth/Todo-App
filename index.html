@@ -12,22 +12,24 @@
     <header>
         <h1>Todo List</h1>
     </header>
-    <form>
-        <input type="text" class="toDoInput">
-        <button class="toDoButton" type="submit">
-            <i class="fas fa-plus-square"></i>
-        </button>
-        <div class="select-container">
-            <select name="select" class="todo-select">
-                <option value="all">All</option>
-                <option value="completed">Completed</option>
-                <option value="notCompleted">Not completed</option>
-            </select>
+    <section class="container">
+        <form>
+            <input type="text" class="toDoInput">
+            <button class="toDoButton" type="submit">
+                <i class="fas fa-plus-square"></i>
+            </button>
+            <div class="select-container">
+                <select name="select" class="todo-select">
+                    <option value="all">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="notCompleted">Not completed</option>
+                </select>
+            </div>
+        </form>
+        <div class="todo-container">
+            <ul class="todo-list"></ul>
         </div>
-    </form>
-    <div class="todo-container">
-        <ul class="todo-list"></ul>
-    </div>
+    </section>
     <script src="app.js"></script>
 </body>
 </html>

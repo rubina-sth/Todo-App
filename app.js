@@ -6,6 +6,7 @@ const todoSelect = document.querySelector('.todo-select');
 
 //Event listeners
 toDoButton.addEventListener('click', addItem);
+todoList.addEventListener('click', checkItem);
 todoList.addEventListener('click', deleteItem);
 todoSelect.addEventListener('click', selectStatus);
 
@@ -42,9 +43,19 @@ function addItem(e){
     toDoInput.value = '';
 }
 
-function deleteItem(e){
-    const item = e.target;
+function checkItem(e){
+	 const item = e.target;
 
+     //Check item
+    if(item.classList[0] === 'check-button'){
+        const todoDiv = item.parentElement;
+        todoDiv.classList.toggle('task-completed');
+    }
+}
+
+function deleteItem(e){
+	const item = e.target; 
+	
     //Delete item
     if(item.classList[0] === 'trash-button'){
         const todoDiv = item.parentElement;
@@ -54,15 +65,11 @@ function deleteItem(e){
         })
     }
 
-    //Check item
-    if(item.classList[0] === 'check-button'){
-        const todoDiv = item.parentElement;
-        todoDiv.classList.toggle('task-completed');
-    }
+   
 }
 
 function selectStatus(e){
-    const todoDiv = todoList.childNodes;
+    const todoDiv = todoList.children;
     for(todo of todoDiv){
         switch(e.target.value){
             case "all":
