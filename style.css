@@ -40,7 +40,13 @@ form button {
   padding: 0.5rem;
 }
 
+.input-container {
+  position: relative;
+}
+
 form button {
+  position: absolute;
+  right: 0;
   cursor: pointer;
   color: #549be0;
   transition: all 0.5s ease;
@@ -144,4 +150,29 @@ select {
 .select-container:hover::after {
   background: #4779c5;
   color: white;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 780px) {
+  form {
+    flex-direction: column;
+    align-items: center;
+  }
+  .input-container {
+    position: relative;
+  }
+  .todoButton {
+    position: absolute;
+    right: 0;
+  }
+  .select-container {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .input-container input {
+    width: 18rem;
+  }
 }
